@@ -16,6 +16,7 @@
 #include "random.h"
 #include "data.h"
 #include "constants/songs.h"
+#include "zig/oak.h"
 
 #define INTRO_SPECIES SPECIES_NIDORAN_F
 
@@ -816,7 +817,7 @@ static void Task_ControlsGuide_LoadPage(u8 taskId)
     }
     else
     {
-        TopBarWindowPrintString(gText_ABUTTONNext_BBUTTONBack, 0, TRUE);
+        TopBarWindowPrintString(testZigString, 0, TRUE);
         for (currWindow = CONTROLS_GUIDE_PAGES_2_3_WINDOW_TOP; currWindow < NUM_CONTROLS_GUIDE_PAGES_2_3_WINDOWS; currWindow++)
         {
             sOakSpeechResources->windowIds[currWindow] = AddWindow(&sControlsGuide_WindowTemplates[sOakSpeechResources->currentPage][currWindow]);
@@ -1032,7 +1033,7 @@ static void Task_PikachuIntro_HandleInput(u8 taskId)
             else
             {
                 ClearTopBarWindow();
-                TopBarWindowPrintString(gText_ABUTTONNext_BBUTTONBack, 0, 1);
+                TopBarWindowPrintString(testZigString, 0, 1);
             }
             gMain.state++;
         }
